@@ -1,6 +1,6 @@
 .product-list{
     width: 300px;
-    height: 510px;
+    height: 530px;
     border: 1px solid #95A0A7;
     border-radius: 8px;
     position: relative;
@@ -14,14 +14,12 @@
 .product-info{
     margin: 0 14px;
 }
-.product-info p{
+/* .product-info p{
     margin-bottom: 0;
     margin-top: 5px;
-}
+} */
 .product-name{
     font-family:'Lato';
-    font-style: normal;
-    font-weight: 400;
     font-size: 21px;
     line-height: 25px;
     margin-top: 7px;
