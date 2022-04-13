@@ -1,20 +1,27 @@
-.Header{
+.Header {
     height: 80px;
     background-color: #1C2B35;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left:140px;
-    padding-right:140px;
+    padding-left: 140px;
+    padding-right: 140px;
     position: sticky;
     top: 0;
 }
-.Header a{
+
+.Header a {
     color: white;
     text-decoration: none;
     font-size: 18px;
     margin-left: 36px;
 }
-.Header a:hover{
-    color:orange
+
+.Header a:hover {
+    color: orange
+}
+
+.signout-btn {
+    margin: 15px;
+    padding: 6px;
 }
