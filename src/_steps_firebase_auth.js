@@ -6,14 +6,20 @@
 3.Install Firebase using npm : npm install firebase
 
 4.Initialize Firebase in my src folder> rename firebase.init.js then import getAuth to export auth (for example: const auth = getAuth(app)
+
 export default auth;) 
 
 5. go to https://console.firebase.google.com/project/ema-john-authentications/authentication/providers and enable provider what provider i want
-6.create login / signup components & setup route
-7. attch form field handler and form submit handler 
-8.
-9.
-10.
+
+6. create login / signup components & setup route
+
+7. attached form field handler and form submit handler 
+
+8.go to https://github.com/CSFrequency/react-firebase-hooks & copy this "npm install --save react-firebase-hooks" 
+  and install in your project for Auth hooks
+
+9. then go Documentation > Authentication Hooks> useCreateUserWithEmailAndPassword >
+10.import 'useCreateUserWithEmailAndPassword' from react firebase hooks
 11.
 _____________________
 Set up Firebase Hosting

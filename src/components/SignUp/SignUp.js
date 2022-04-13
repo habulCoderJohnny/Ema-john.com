@@ -1,12 +1,19 @@
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css';
+
 const SignUp = () => {
     // 1st
-    const [email,setEmail] = useState('');
+    const [email, setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [rePassword,setRePassword] = useState('');
     const [error,setError] = useState('');
+    //3rd-b
+    const navigate = useNavigate();
+    // 3rd account create function
+    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
 
     // 2nd
     const handleEmailBlur = event =>{
@@ -18,16 +25,27 @@ const SignUp = () => {
     const handleRePasswordBlur = event =>{
         setRePassword(event.target.value);
     }
+    //3rd-c| account create hole user ke shop e pathbo
+        if (user) {
+            navigate('/shop');
+        }
+
     const handleCreateUser = event =>{
         event.preventDefault();
-        // validation
+        // validation ERROR Condition
         if (password !== rePassword){
             setError('Your Password did not match!');
             return;
-            
         }
+        if (password.length<6) {
+            setError('password minimum must be 6 characters or longer!')
+            return;
+        }
+     //3rd-a
+     createUserWithEmailAndPassword(email,password);
     }
-    //3rd
+
+ 
     return (
         <div className='form-container'>
         <div>
@@ -44,17 +62,21 @@ const SignUp = () => {
                 <div className="input-group">
                     <label htmlFor="confirm-password">Confirm Password</label>
                     <input onBlur={handleRePasswordBlur}type="password" name="confirm-password" id="" required/>
+
+                    {/* error showing in ui */}
+                    <p className='rePass-error'>{error}</p>
+                    
                 </div>
-                {/* error show in Ui */}
-                <p className='rePass-error'>{error}</p>
                 <input className='form-submit' type="submit" value="Sign Up" />
             </form>
+                                 {/* FORM END  */}
+
             <p>
-                Already Have an Account? <Link className='form-link' to="/login">Login</Link>
+             Already Have an Account? <Link className='form-link' to="/login">Login</Link>
             </p>
             <div className="hr-area"><hr/>
                   <p className='or'>OR</p>
-                </div>
+            </div>
         </div>
     </div>
     );
