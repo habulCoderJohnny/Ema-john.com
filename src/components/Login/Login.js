@@ -44,8 +44,8 @@ const Login = () => {
                         <input onBlur={handlePasswordBlur} type="password" name="password" id="" required/>
                     </div>
                     {/* error showing & spinner in ui */}
-                    <p className='error'>{error?.message}</p>
                     {loading && <p className='spinner'></p>}
+                    <p className='error'>{error?.message}</p>
                     <input className='form-submit' type="submit" value="Log in" />
                 </form>
 

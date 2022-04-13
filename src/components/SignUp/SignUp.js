@@ -9,11 +9,11 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [rePassword,setRePassword] = useState('');
-    const [error,setError] = useState('');
+    const [errors,setError] = useState('');
     //4th
     const navigate = useNavigate();
     // 3rd account create function
-    const [createUserWithEmailAndPassword,user,loading] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth);
 
     // 2nd
     const handleEmailBlur = event =>{
@@ -65,7 +65,7 @@ const SignUp = () => {
                 </div>
                 {/* error showing & spinner in ui */}
                 {loading && <p className='spinner'></p>}
-                <p className='error'>{error}</p>
+                <p className='error'>{errors} {error?.message}</p>
                 <input className='form-submit' type="submit" value="Sign Up" />
             </form>
                              {/* FORM END  */}
