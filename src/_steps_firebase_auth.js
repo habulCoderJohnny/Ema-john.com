@@ -19,8 +19,13 @@ export default auth;)
   and install in your project for Auth hooks
 
 9. then go Documentation > Authentication Hooks> useCreateUserWithEmailAndPassword >
-10.import 'useCreateUserWithEmailAndPassword' from react firebase hooks
-11.
+10. #SIGNUP:- import 'useCreateUserWithEmailAndPassword(auth)' from react firebase hooks and also 'createUserWithEmailAndPassword(email,password);' for create user account
+ 
+11.IF User acc created then redirect to the expected page example:'const navigate = useNavigate();'
+
+11. #SIGNIN:- import 'useSignInWithEmailAndPassword(auth)' from react firebase hooks and also 'SignInWithEmailAndPassword(email,password);' for user SIGN IN account
+12.
+13.
 _____________________
 Set up Firebase Hosting
 1.npm install -g firebase-tools

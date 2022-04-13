@@ -10,7 +10,7 @@ const SignUp = () => {
     const [password,setPassword] = useState('');
     const [rePassword,setRePassword] = useState('');
     const [error,setError] = useState('');
-    //3rd-b
+    //4th
     const navigate = useNavigate();
     // 3rd account create function
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
@@ -25,7 +25,7 @@ const SignUp = () => {
     const handleRePasswordBlur = event =>{
         setRePassword(event.target.value);
     }
-    //3rd-c| account create hole user ke shop e pathbo
+    //4th-a| account create hole user ke shop e pathbo
         if (user) {
             navigate('/shop');
         }
@@ -61,12 +61,10 @@ const SignUp = () => {
                 </div>
                 <div className="input-group">
                     <label htmlFor="confirm-password">Confirm Password</label>
-                    <input onBlur={handleRePasswordBlur}type="password" name="confirm-password" id="" required/>
-
-                    {/* error showing in ui */}
-                    <p className='rePass-error'>{error}</p>
-                    
+                    <input onBlur={handleRePasswordBlur}type="password" name="confirm-password" id="" required/>    
                 </div>
+                {/* error showing in ui */}
+                <p className='error'>{error}</p>
                 <input className='form-submit' type="submit" value="Sign Up" />
             </form>
                                  {/* FORM END  */}
