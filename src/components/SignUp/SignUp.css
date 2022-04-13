@@ -1,0 +1,8 @@
+.rePass-error{
+    color: white;
+    font-size: bold;
+    background-color: rgba(255, 62, 62, 0.929);
+    border-radius: 6px;
+    text-align: center;
+
+}

@@ -9,8 +9,8 @@
 export default auth;) 
 
 5. go to https://console.firebase.google.com/project/ema-john-authentications/authentication/providers and enable provider what provider i want
-6.
-7.
+6.create login / signup components & setup route
+7. attch form field handler and form submit handler 
 8.
 9.
 10.
