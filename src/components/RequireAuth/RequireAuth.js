@@ -8,10 +8,12 @@ const RequireAuth = ({children}) => {
     // getting user 
     const [user] = useAuthState(auth);
     const location = useLocation();
+
     //jodi visitor login kora na thake then login e pathabo 
     if (!user) {
         return <Navigate to="/login" state={{from:location}} replace></Navigate>
     }
+    //  baki code: jodi user login kore pele tahole Inventory page dukar process login.js e
     return children;
 };
 

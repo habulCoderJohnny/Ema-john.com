@@ -1,0 +1,14 @@
+.bg{
+    background-image: url(https://assets.aboutamazon.com/dims4/default/402f915/2147483647/strip/true/crop/6113x3441+0+231/resize/1320x743!/format/webp/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2Fe3%2F0a%2F32470c064fe0a9aab97b4cf44a91%2Fmc-2200.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.about{
+    font-style: italic;
+    margin: 40px;
+    color: white;
+    text-align: justify;
+    letter-spacing: 2px;
+    line-height: 1.8;
+
+}

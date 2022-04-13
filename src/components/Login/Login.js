@@ -28,12 +28,13 @@ const Login = () => {
     }
     //4th-a| user Logged hole user ke order e pathbo code was: if (user) { navigate('/orders')}
 
-    //5th-a
+    //5th-a je page visitor dokte caise se page e pathabo means Inventory page 
     if (user) {
         navigate(from, {replace:true});
     }
     const handleUserLogin = event =>{
         event.preventDefault();
+
     //3rd-a
     signInWithEmailAndPassword(email, password)
 
