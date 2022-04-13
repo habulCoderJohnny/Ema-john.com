@@ -45,9 +45,7 @@ const Login = () => {
                     </div>
                     {/* error showing & spinner in ui */}
                     <p className='error'>{error?.message}</p>
-                    {
-                        loading && <p>Loading.......</p>
-                    }
+                    {loading && <p className='spinner'></p>}
                     <input className='form-submit' type="submit" value="Log in" />
                 </form>
 
