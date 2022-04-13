@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Login.css';
 
@@ -13,12 +13,18 @@ const Login = () => {
     // 3rd account signin function
     const [signInWithEmailAndPassword,user,loading,error ] = 
           useSignInWithEmailAndPassword(auth);
+    //4th
+    const navigate = useNavigate();
     // 2
     const handleEmailBlur = event =>{
         setEmail(event.target.value);
     }
     const handlePasswordBlur = event =>{
         setPassword(event.target.value);
+    }
+    //4th-a| account create hole user ke shop e pathbo
+    if (user) {
+        navigate('/orders');
     }
     const handleUserLogin = event =>{
         event.preventDefault();

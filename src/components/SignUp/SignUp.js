@@ -10,10 +10,12 @@ const SignUp = () => {
     const [password,setPassword] = useState('');
     const [rePassword,setRePassword] = useState('');
     const [errors,setError] = useState('');
-    //4th
-    const navigate = useNavigate();
+    
     // 3rd account create function
     const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth);
+
+    //4th
+    const navigate = useNavigate();
 
     // 2nd
     const handleEmailBlur = event =>{
@@ -29,7 +31,7 @@ const SignUp = () => {
         if (user) {
             navigate('/shop');
         }
-
+        
     const handleCreateUser = event =>{
         event.preventDefault();
         // validation ERROR Condition
