@@ -9,8 +9,20 @@ import './Shop.css'
 const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+    //For Pagination 
+    const[pageCount, setPageCount] = useState(0);
+    useEffect(()=>{
+        fetch('http://localhost:5000/productCount')
+        .then(res => res.json())
+        .then(data =>{
+            const count = data.count;
+            const pages = Math.ceil(count/10);
+            setPageCount(pages)
+        });
+    },[]);
+
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/ProgrammingHero1/ema-john-resources/main/fakeData/products.json')
+        fetch('http://localhost:5000/product')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -57,7 +69,7 @@ const Shop = () => {
                         product={product} handleAddtoCart={handleAddtoCart}></Product>)
                 }
             </div>
-
+            
             <div className="cart-container">
                 <Cart cart={cart}>
                     <Link to='/orders'>
@@ -65,6 +77,13 @@ const Shop = () => {
                     </Link>
                 </Cart>
             </div>
+
+                            {/* Pagination */}
+                            <div className='pagination'>
+                    {
+                        [...Array(pageCount).keys()].map(number=><button>{number+1}</button>)
+                    }
+                </div>
         </div>
     );
 };
