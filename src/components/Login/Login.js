@@ -50,11 +50,11 @@ const Login = () => {
                 <form onSubmit={handleUserLogin}>
                     <div className="input-group">
                         <label htmlFor="email">Email</label>
-                        <input onBlur={handleEmailBlur} type="email" name="email" id="" required/>
+                        <input onBlur={handleEmailBlur} type="email" name="email"  required/>
                     </div>
                     <div className="input-group">
                         <label htmlFor="password">Password</label>
-                        <input onBlur={handlePasswordBlur} type="password" name="password" id="" required/>
+                        <input onBlur={handlePasswordBlur} type="password" name="password" required/>
                     </div>
                     {/* error showing & spinner in ui */}
                     {loading && <p className='spinner'></p>}
