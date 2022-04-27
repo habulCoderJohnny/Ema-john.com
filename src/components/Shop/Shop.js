@@ -11,6 +11,9 @@ const Shop = () => {
     const [cart, setCart] = useState([]);
     //For Pagination 
     const[pageCount, setPageCount] = useState(0);
+    const[currentPage, setCurrentPage] = useState(0);
+    const[size, setSize] = useState(10);
+
     useEffect(()=>{
         fetch('http://localhost:5000/productCount')
         .then(res => res.json())
@@ -73,16 +76,22 @@ const Shop = () => {
             <div className="cart-container">
                 <Cart cart={cart}>
                     <Link to='/orders'>
-                        <button>Review Order</button>
+                        <button>Order History</button>
                     </Link>
                 </Cart>
             </div>
 
-                            {/* Pagination */}
+                            {/* Pagination Part*/}
                             <div className='pagination'>
                     {
-                        [...Array(pageCount).keys()].map(number=><button>{number+1}</button>)
+                        [...Array(pageCount).keys()].map(number=><button className={currentPage===number ? 'selected':''} onClick={()=>setCurrentPage(number)}>{number+1}</button>)
                     }
+                    <select className='' onChange={e=> setSize(e.target.value)}>
+                        <option value="5">5</option>
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="16">20</option>
+                    </select>
                 </div>
         </div>
     );
